@@ -10,10 +10,21 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       filmId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Film',
+          key: 'id',
+        }
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'User',
+          key: 'id',
+        }
+
       },
       rating: {
         type: Sequelize.INTEGER

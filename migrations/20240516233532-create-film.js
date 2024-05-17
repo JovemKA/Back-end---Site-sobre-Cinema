@@ -10,22 +10,31 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       release_year: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       genre: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       duration: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       synopsis: {
         type: Sequelize.TEXT
       },
       directorId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Director',
+          key: 'id'
+        },
       },
       createdAt: {
         allowNull: false,
