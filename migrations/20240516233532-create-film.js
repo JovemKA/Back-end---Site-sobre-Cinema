@@ -35,6 +35,8 @@ module.exports = {
           model: 'Directors',
           key: 'id'
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL'
       },
       createdAt: {
         allowNull: false,
