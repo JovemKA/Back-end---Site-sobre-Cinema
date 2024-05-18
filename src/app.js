@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { Sequelize } from 'sequelize';
 import errorHandler from './middlewares/errorHandler';
-import router from './routes/router';
+import router from './router';
 
 dotenv.config();
 
