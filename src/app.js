@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { config } = require('dotenv');
-const { sequelize } = require('./models');
-const errorHandler = require('./middlewares/errorHandler');
-const router = require('./routes/router');
+const { sequelize } = require('../models');
+const errorHandler = require('../middlewares/errorHandler');
+const router = require('../routes/router');
 
 config();
 
@@ -13,8 +13,8 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // Importar rotas
-const userRoutes = require('./routes/users');
-const directorRoutes = require('./routes/directors');
+const userRoutes = require('../routes/users');
+const directorRoutes = require('../routes/directors');
 
 // Usar rotas
 app.use('/users', userRoutes);
