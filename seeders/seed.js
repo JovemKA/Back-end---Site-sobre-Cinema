@@ -15,10 +15,10 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   }
 });
 
-const Director = require('./models/director')(sequelize, DataTypes);
-const Film = require('./models/film')(sequelize, DataTypes);
-const Review = require('./models/review')(sequelize, DataTypes);
-const User = require('./models/user')(sequelize, DataTypes);
+const Director = require('../models/director')(sequelize, DataTypes);
+const Film = require('../models/film')(sequelize, DataTypes);
+const Review = require('../models/review')(sequelize, DataTypes);
+const User = require('../models/user')(sequelize, DataTypes);
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true }); // Certifique-se de que isso seja usado apenas em ambiente de desenvolvimento
